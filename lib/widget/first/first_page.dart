@@ -9,10 +9,9 @@ class MyFirstHomePage extends StatefulWidget {
   _MyFirstHomePageStage createState() => _MyFirstHomePageStage();
 }
 class _MyFirstHomePageStage extends State<MyFirstHomePage> {
-  Widget _showPage = new MyFirstHomePage();
 
   MonitorService service = MonitorService();
-  Map<String, double> defaultMap = {};
+  Map<String, double> defaultMap =   {"Sucesso": 0, "Negado": 0, "Falha": 0 };
 
   int pageIndex = 0;
   @override
