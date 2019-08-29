@@ -3,12 +3,12 @@ import 'package:monitor_app/service/service.dart';
 import 'package:pie_chart/pie_chart.dart';
 
 
-class MySecondHomePage extends StatefulWidget {
+class UndefinedChart extends StatefulWidget {
 
   @override
   _MySecondHomePageStage createState() => _MySecondHomePageStage();
 }
-class _MySecondHomePageStage extends State<MySecondHomePage> {
+class _MySecondHomePageStage extends State<UndefinedChart> {
 
   MonitorService service = MonitorService();
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:monitor_app/widget/home/home.dart';
+import 'package:monitor_app/home.dart';
 import 'package:monitor_app/widget/login/index.dart';
 
 class Routes {

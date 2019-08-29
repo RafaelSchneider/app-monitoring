@@ -3,12 +3,12 @@ import 'package:monitor_app/service/service.dart';
 import 'package:pie_chart/pie_chart.dart';
 
 
-class MyFirstHomePage extends StatefulWidget {
+class LoginsChart extends StatefulWidget {
 
   @override
   _MyFirstHomePageStage createState() => _MyFirstHomePageStage();
 }
-class _MyFirstHomePageStage extends State<MyFirstHomePage> {
+class _MyFirstHomePageStage extends State<LoginsChart> {
 
   MonitorService service = MonitorService();
   Map<String, double> defaultMap =   {"Sucesso": 0, "Negado": 0, "Falha": 0 };

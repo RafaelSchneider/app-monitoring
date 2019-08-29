@@ -1,9 +1,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:monitor_app/service/service.dart';
-import 'package:monitor_app/widget/first/first_page.dart';
-import 'package:monitor_app/widget/second/second_page.dart';
-import 'package:monitor_app/widget/third/third_page.dart';
+import 'package:monitor_app/widget/chart/login_chart.dart';
+import 'package:monitor_app/widget/chart/undefined_chart.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -14,37 +13,27 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final  MyFirstHomePage _firstPage = MyFirstHomePage();
-  final  MySecondHomePage _secondPage = MySecondHomePage();
-  final  MyThirdHomePage _thirdPage = new MyThirdHomePage();
+  final  LoginsChart _loginsChart = LoginsChart();
+  final  UndefinedChart _undefinedChart = UndefinedChart();
 
-  Widget _showPage = new MySecondHomePage();
+  Widget _showChart = new UndefinedChart();
 
   MonitorService service = MonitorService();
   String _titulo = "";
   int pageIndex = 0;
 
-  Widget _chooseOptions(int index) {
-    print("Choose Options: index ==> "+index.toString() );
+  Widget _chooseChart(int index) {
     switch (index) {
 
       case 0: {
         _titulo = "GRÁFICO DE LOGINS";
-          return _firstPage;
-      }
-      break;
+          return _loginsChart;
+      } break;
 
       case 1: {
-        print("Case 1 - Vai abrir segunda pagina");
         _titulo = "GRÁFICO DE GOLS DO GUERRERO";
-        return _secondPage;
-      }
-      break;
-
-      case 2: {
-        return _thirdPage;
-      }
-      break;
+          return _undefinedChart;
+      } break;
     }
   }
 
@@ -57,11 +46,10 @@ class _MyHomePageState extends State<MyHomePage> {
         items: <Widget>[
             Icon(Icons.accessibility_new, size: 30),
             Icon(Icons.add_to_queue, size: 30),
-           // Icon(Icons.refresh, size: 30),
           ],
           onTap: (int index) {
               setState(() {
-                _showPage = _chooseOptions(index);
+                _showChart = _chooseChart(index);
               });
           },
       ),
@@ -72,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Image.asset('assets/destaque-agibank.gif'),
           Text(_titulo, style: TextStyle(fontWeight: FontWeight.bold , fontSize: 20),
           ),
-          _showPage,
+          _showChart,
         ],
       ),
 
