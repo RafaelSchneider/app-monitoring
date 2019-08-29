@@ -81,3 +81,22 @@ class _MyHomePageState extends State<MyHomePage> {
 
 }
 
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: 'Monitor App',
+        theme: ThemeData(
+            backgroundColor: Colors.blue,
+            primarySwatch: Colors.blue,
+            primaryColorLight: Colors.blue
+
+        ),
+        home: Scaffold(
+          backgroundColor: Colors.blue,
+          body: MyHomePage(title: 'Monitor App'),
+        )
+    );
+  }
+}
